@@ -12,6 +12,13 @@
       "scripts/**",
       "**/*.md"
     ],
+    "redirects": [
+      {
+        "source": "/research",
+        "destination": "https://arcologylabs.com/research",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source": "/assets/fonts/**",

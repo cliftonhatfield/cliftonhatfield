@@ -16,6 +16,7 @@ DRIFT="$APPS/drift"
 WAU="$APPS/we-are-united"
 RETRO="$APPS/retrostack"
 OBIT="$APPS/write_an_obituary"
+UNTIL_NOON="$APPS/until-noon"
 
 # encode <src-png-or-jpg> <out-basename-without-ext> <quality>
 encode() {
@@ -50,6 +51,13 @@ echo "Write an Obituary logo.svg (rasterize -> 256 png) ->"
 magick -background none "$OBIT/images/logo.svg" -resize 256x256 "$TMP/obit.png" 2>/dev/null \
   || cp "$OBIT/images/phone.png" "$TMP/obit.png"
 encode "$TMP/obit.png" project-obituary 86
+
+echo "Until Noon icon + App Store badges ->"
+UNTIL_ICON="$UNTIL_NOON/website/assets/app-icon.png"
+[ -f "$UNTIL_ICON" ] || UNTIL_ICON="$UNTIL_NOON/Design/AppIcon/until-noon-icon-blue-background.png"
+encode "$(resize_png "$UNTIL_ICON" untilnoon 256)" project-untilnoon 88
+cp "$UNTIL_NOON/website/assets/app-store-badge-en-black.svg" "$IMG/app-store-badge-en-black.svg"
+cp "$UNTIL_NOON/website/assets/app-store-badge-en-white.svg" "$IMG/app-store-badge-en-white.svg"
 
 echo "Favicons (from brand favicon.svg) ->"
 cp "$DRIFT/landing/favicon.svg" "$FAV/favicon.svg"

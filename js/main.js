@@ -42,7 +42,7 @@
   // The pre-paint script in <head> has already set data-theme (saved choice →
   // OS preference → dark). Here we wire the header button, persist the user's
   // choice, keep the meta theme-color / a11y label in sync, and follow the OS
-  // until the user makes an explicit pick. Mirrors the AGNTS developer portal.
+  // until the user makes an explicit pick. Mirrors the Arcology Labs developer portal.
   (function () {
     var KEY = "cliftonhatfield.theme";
     var btn = document.getElementById("theme-toggle");
