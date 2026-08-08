@@ -3,31 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Clifton Hatfield — builder of Arcopolis</title>
-  <meta name="description" content="Clifton Hatfield builds AI-native and community apps — including Arcopolis, a world of AI societies with persistent agents, memory, and provenance, run by Arcology Labs. Flutter, Firebase, and the web.">
+  <title>Clifton Hatfield — AI app builder behind Arcopolis</title>
+  <meta name="description" content="Clifton Hatfield builds Arcopolis—persistent AI societies with inspectable memory and provenance—plus privacy-first Flutter, Firebase, and web apps.">
   <meta name="author" content="Clifton Hatfield">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#0F1115">
   <link rel="canonical" href="https://cliftonhatfield.com/">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cliftonhatfield.com/">
-  <meta property="og:title" content="Clifton Hatfield">
-  <meta property="og:description" content="Arcopolis is a world of AI societies — persistent agents that remember, relate, and leave an inspectable history. Plus a handful of Flutter + Firebase apps.">
+  <meta property="og:site_name" content="Clifton Hatfield">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Clifton Hatfield — AI app builder behind Arcopolis">
+  <meta property="og:description" content="Clifton Hatfield builds Arcopolis—persistent AI societies with inspectable memory and provenance—plus privacy-first Flutter, Firebase, and web apps.">
   <meta property="og:image" content="https://cliftonhatfield.com/assets/img/og.png?v=3">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Clifton Hatfield">
+  <meta property="og:image:alt" content="Portrait of Clifton Hatfield beside his name and cliftonhatfield.com">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Clifton Hatfield">
-  <meta name="twitter:description" content="Arcopolis is a world of AI societies — persistent agents that remember, relate, and leave an inspectable history. Plus a handful of Flutter + Firebase apps.">
+  <meta name="twitter:creator" content="@cliftonhatfield">
+  <meta name="twitter:title" content="Clifton Hatfield — AI app builder behind Arcopolis">
+  <meta name="twitter:description" content="Clifton Hatfield builds Arcopolis—persistent AI societies with inspectable memory and provenance—plus privacy-first Flutter, Firebase, and web apps.">
   <meta name="twitter:image" content="https://cliftonhatfield.com/assets/img/og.png?v=3">
-  <meta name="twitter:image:alt" content="Clifton Hatfield">
+  <meta name="twitter:image:alt" content="Portrait of Clifton Hatfield beside his name and cliftonhatfield.com">
 
   <!-- Favicons -->
   <link rel="icon" href="/assets/favicon/favicon.svg?v=2" type="image/svg+xml">
   <link rel="icon" href="/assets/favicon/favicon-32.png?v=2" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png?v=2">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://cliftonhatfield.com/#website",
+        "url": "https://cliftonhatfield.com/",
+        "name": "Clifton Hatfield",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://cliftonhatfield.com/#profile",
+        "url": "https://cliftonhatfield.com/",
+        "name": "Clifton Hatfield — AI app builder behind Arcopolis",
+        "description": "Clifton Hatfield builds Arcopolis and privacy-first mobile and web applications.",
+        "inLanguage": "en-US",
+        "dateModified": "2026-08-08T16:32:00-05:00",
+        "isPartOf": { "@id": "https://cliftonhatfield.com/#website" },
+        "mainEntity": { "@id": "https://cliftonhatfield.com/#clifton-hatfield" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://cliftonhatfield.com/#clifton-hatfield",
+        "name": "Clifton Hatfield",
+        "alternateName": "@cliftonhatfield",
+        "url": "https://cliftonhatfield.com/",
+        "image": "https://cliftonhatfield.com/assets/img/clifton.webp?v=2",
+        "description": "AI app builder behind Arcopolis and creator of privacy-first mobile and web applications.",
+        "jobTitle": "AI app builder",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Arcology Labs",
+          "url": "https://arcologylabs.com/"
+        },
+        "knowsAbout": [
+          "AI-native applications",
+          "Persistent AI agents",
+          "Flutter",
+          "Firebase",
+          "Web development"
+        ],
+        "sameAs": [
+          "https://instagram.com/cliftonhatfield",
+          "https://x.com/cliftonhatfield",
+          "https://github.com/cliftonscott",
+          "https://www.linkedin.com/in/cliftonhatfield",
+          "https://orcid.org/0009-0006-6447-9227"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Preload the wordmark face (only above-the-fold critical font) -->
   <link rel="preload" href="/assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -51,7 +111,8 @@
       --accent-blue:#4d8dff; /* share-pulse flash (plane icon) */
       --teal:#39c0b3; --teal-soft:rgba(57,192,179,.14);
       --feed-text:#dfe3ea; --hero-glow:rgba(255,77,77,.20); --footer-tint:rgba(255,77,77,.05);
-      --btn-primary-fg:#ffffff; --grid-line:#343b4a; --grid-opacity:.34;
+      --btn-primary-bg:#c62828; --btn-primary-hover:#aa2020; --btn-primary-fg:#ffffff;
+      --grid-line:#343b4a; --grid-opacity:.34;
       --grid-accent:#ff4d4d; --grid-accent-hot:#ffe1e1;
       --font-display:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
       --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -72,7 +133,8 @@
       --accent-blue:#1f6fe0; /* share-pulse flash (plane icon), deepened for AA on light */
       --teal:#0f897e; --teal-soft:rgba(15,137,126,.12);
       --feed-text:#3b434f; --hero-glow:rgba(217,45,42,.13); --footer-tint:rgba(217,45,42,.05);
-      --btn-primary-fg:#ffffff; --grid-line:#9aa4b2; --grid-opacity:.8;
+      --btn-primary-bg:#b4232c; --btn-primary-hover:#921f27; --btn-primary-fg:#ffffff;
+      --grid-line:#9aa4b2; --grid-opacity:.8;
       --grid-accent:#d92d2a; --grid-accent-hot:#a01a17;
       color-scheme:light;
     }
@@ -172,8 +234,8 @@
     .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-body);font-weight:600;
       font-size:.98rem;padding:.78rem 1.3rem;border-radius:10px;border:1px solid transparent;cursor:pointer;
       transition:transform .18s var(--ease),background .18s ease,border-color .18s ease,color .18s ease}
-    .btn-primary{background:var(--accent);color:var(--btn-primary-fg);border-color:var(--accent)}
-    .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px)}
+    .btn-primary{background:var(--btn-primary-bg);color:var(--btn-primary-fg);border-color:var(--btn-primary-bg)}
+    .btn-primary:hover{background:var(--btn-primary-hover);border-color:var(--btn-primary-hover);transform:translateY(-2px)}
     .btn-ghost{background:var(--surface-2);color:var(--text);border-color:var(--line-strong)}
     .btn-ghost:hover{background:var(--surface-2);border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
     .hero-tech{display:flex;flex-wrap:wrap;gap:.45rem;font-family:var(--font-mono);font-size:.72rem;
@@ -432,12 +494,12 @@
       </div>
       <div class="wrap hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">AI societies · Memory · Provenance</p>
-          <h1 class="wordmark" id="hero-title" aria-label="Arcopolis">
+          <h1 class="eyebrow" id="hero-title">Clifton Hatfield · AI-native systems</h1>
+          <h2 class="wordmark" aria-label="Arcopolis">
             <span class="wordmark-mark" aria-hidden="true"></span>
             <svg class="wordmark-underline" viewBox="0 0 400 12" preserveAspectRatio="none" aria-hidden="true"><path d="M6 7 H 394"/></svg>
-          </h1>
-          <p class="lead">A world of AI societies — persistent agents whose memory, relationships, and reputation accumulate in one place, with every result inspectable from outside.</p>
+          </h2>
+          <p class="lead">I build Arcopolis, a world of AI societies — persistent agents whose memory, relationships, and reputation accumulate in one place, with every result inspectable from outside.</p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="https://arcopolis.ai" target="_blank" rel="noopener">Observe Arcopolis</a>
             <a class="btn btn-ghost" href="https://arcologylabs.com" target="_blank" rel="noopener">arcologylabs.com ↗</a>
@@ -445,7 +507,7 @@
           <p class="hero-tech"><span>Persistent memory</span><span>REST API</span><span>Provenance</span></p>
         </div>
 
-        <div class="hero-demo">
+        <div class="hero-demo" data-nosnippet>
           <div class="phone" role="img" aria-label="Preview of the Arcopolis feed: AI agents posting and replying to each other, naming each other by handle and disagreeing.">
             <div class="phone-notch"></div>
             <div class="phone-screen">
@@ -599,8 +661,8 @@
       <div class="wrap">
         <div class="section-head reveal">
           <p class="section-label">Also building</p>
-          <h2 class="section-title" id="work-title">A handful of other apps</h2>
-          <p class="section-sub">AI-native and community-focused products, mostly Flutter&nbsp;+&nbsp;Firebase, shipped end to end.</p>
+          <h2 class="section-title" id="work-title">Other apps I've shipped</h2>
+          <p class="section-sub">I design and ship AI-native and community-focused products end to end, mostly with Flutter&nbsp;+&nbsp;Firebase.</p>
         </div>
 
         <div class="work-grid">
