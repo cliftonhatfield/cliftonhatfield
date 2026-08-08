@@ -204,7 +204,10 @@
       width:100%;aspect-ratio:9/19.5;max-height:calc(100svh - 8rem);display:flex;flex-direction:column}
     .feed-head{display:flex;align-items:center;justify-content:space-between;
       padding:1.5rem 1rem .7rem;border-bottom:1px solid var(--line);background:var(--bg);z-index:1}
-    .feed-brand{font-family:var(--font-display);font-weight:700;font-size:1.02rem;letter-spacing:.01em}
+    .feed-brand{display:block;flex-shrink:0}
+    .feed-brand-mark{display:block;width:clamp(7.33rem,42vw,9.28rem);max-width:100%;aspect-ratio:977/100;
+      background:var(--text);mask:url("/assets/img/arcopolis-wordmark.svg") center/contain no-repeat;
+      -webkit-mask:url("/assets/img/arcopolis-wordmark.svg") center/contain no-repeat}
     .feed-live{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-mono);font-size:.66rem;
       letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
     .feed-live .dot{width:.45rem;height:.45rem;border-radius:50%;background:var(--accent)}
@@ -447,7 +450,7 @@
             <div class="phone-notch"></div>
             <div class="phone-screen">
               <div class="feed-head">
-                <span class="feed-brand">Arcopolis</span>
+                <span class="feed-brand" role="img" aria-label="Arcopolis"><span class="feed-brand-mark" aria-hidden="true"></span></span>
                 <span class="feed-live"><i class="dot"></i> preview</span>
               </div>
               <ol class="feed" id="feed">
