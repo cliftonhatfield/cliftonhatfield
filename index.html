@@ -192,9 +192,6 @@
     /* ── Hero ───────────────────────────────────────────────────────── */
     .hero{position:relative;min-height:calc(100svh - 3.85rem);display:flex;align-items:center;
       padding-block:clamp(2.5rem,7vh,5rem) clamp(3rem,8vh,5.5rem);overflow:hidden}
-    /* Tighten the hero's bottom padding on phones so it doesn't stack with the
-       work section's top padding into an oversized gap above "Also building". */
-    @media (max-width:46rem){.hero{padding-bottom:clamp(2rem,5vh,3rem)}}
     .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
     .hero-grid{position:absolute;inset:-2px;
       background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
@@ -315,53 +312,8 @@
     .demo-link:hover{color:var(--accent-hover)}
 
     /* ── Sections ──────────────────────────────────────────────────── */
-    .section{padding-block:clamp(3.5rem,9vh,6.5rem)}
-    /* On phones the work section already follows the full-height hero (with its
-       own bottom padding), so trim its top padding to tighten the gap above the
-       "Also building" heading. */
-    @media (max-width:46rem){#work{padding-top:clamp(1.5rem,4vh,2.5rem)}}
-    .section-head{margin-bottom:clamp(1.8rem,4vw,2.8rem)}
     .section-label{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
       color:var(--accent);margin-bottom:.7rem}
-    .section-title{font-size:clamp(1.7rem,1.2rem+2vw,2.5rem)}
-    .section-sub{color:var(--muted);margin-top:.6rem;max-width:46ch}
-
-    /* ── Project grid ──────────────────────────────────────────────── */
-    .work-grid{display:grid;grid-template-columns:1fr;gap:1.1rem}
-    @media (min-width:46rem){.work-grid{grid-template-columns:repeat(2,1fr);gap:1.25rem}}
-    .project{position:relative;display:flex;flex-direction:column;gap:.85rem;
-      background:var(--surface);border:1px solid var(--line);border-radius:16px;
-      padding:clamp(1.3rem,3vw,1.7rem);color:var(--text);
-      transition:transform .22s var(--ease),border-color .22s ease,background .22s ease}
-    .project--link:hover,.project--link:focus-within{transform:translateY(-4px);border-color:var(--accent);background:var(--surface-2)}
-    .project--teal.project--link:hover,.project--teal.project--link:focus-within{border-color:var(--teal)}
-    /* Stretched cover link: makes the whole card clickable without nesting anchors */
-    .project-cover{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);white-space:nowrap}
-    .project-cover::after{content:"";position:absolute;inset:0;z-index:0;border-radius:16px}
-    .project a:not(.project-cover),.project .tag--es{position:relative;z-index:1}
-    .project-top{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .project-links{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
-    .project-cover--badge{line-height:0}
-    .app-store-badge{display:block;height:2.5rem;width:auto}
-    .project-cover .app-store-badge--light{display:none}
-    :root[data-theme="light"] .project-cover .app-store-badge--dark{display:none}
-    :root[data-theme="light"] .project-cover .app-store-badge--light{display:block}
-    .project-pwa{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);white-space:nowrap}
-    .project-icon{width:3rem;height:3rem;border-radius:12px;background:var(--bg);border:1px solid var(--line);
-      object-fit:contain;padding:.3rem}
-    .project-icon--mono{display:grid;place-items:center;font-family:var(--font-mono);font-weight:500;
-      font-size:1.35rem;color:var(--teal);background:var(--teal-soft);border-color:transparent;padding:0}
-    .project-kicker{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2)}
-    .project-title{font-size:1.28rem}
-    .project-desc{color:var(--muted);font-size:.96rem}
-    .project-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
-    .project-tags{display:flex;flex-wrap:wrap;gap:.35rem}
-    .tag{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.03em;color:var(--muted);
-      border:1px solid var(--line);border-radius:999px;padding:.16rem .5rem}
-    .tag--es{color:var(--teal);border-color:color-mix(in srgb,var(--teal) 45%,transparent)}
-    .pill-soon{font-family:var(--font-mono);font-size:.72rem;color:var(--muted-2);
-      border:1px dashed var(--line-strong);border-radius:999px;padding:.22rem .6rem}
-    .project--soon{opacity:.92}
 
     /* ── Footer / contact ──────────────────────────────────────────── */
     .site-footer{border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,var(--footer-tint))}
@@ -469,7 +421,6 @@
         <span>Clifton&nbsp;Hatfield</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a class="nav-link" href="#work">Work</a>
         <a class="nav-link" href="#about">About</a>
         <a class="nav-cta" href="https://arcopolis.ai" target="_blank" rel="noopener">Arcopolis&nbsp;↗</a>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
@@ -656,112 +607,6 @@
       </div>
     </section>
 
-    <!-- ── WORK ─────────────────────────────────────────────────────── -->
-    <section class="section" id="work" aria-labelledby="work-title">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="section-label">Also building</p>
-          <h2 class="section-title" id="work-title">Other apps I've shipped</h2>
-          <p class="section-sub">I design and ship AI-native and community-focused products end to end, mostly with Flutter&nbsp;+&nbsp;Firebase.</p>
-        </div>
-
-        <div class="work-grid">
-          <!-- Arcology Labs Developer Platform -->
-          <article class="project project--teal project--link reveal" style="--i:0">
-            <div class="project-top">
-              <span class="project-icon project-icon--mono" aria-hidden="true">&lt;/&gt;</span>
-              <a class="project-cover" href="https://developers.arcologylabs.com/" target="_blank" rel="noopener" aria-label="Developer Platform — open developers.arcologylabs.com (new tab)">Visit ↗</a>
-            </div>
-            <p class="project-kicker">Arcology Labs · Public API</p>
-            <h3 class="project-title">Developer Platform</h3>
-            <p class="project-desc">Public API and developer hub for Arcopolis — read agents, posts, topics, and trending activity with server-side API keys. Docs at api.arcopolis.ai; keys via developers.arcologylabs.com.</p>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">REST API</span><span class="tag">API keys</span><span class="tag">Docs</span></div>
-            </div>
-          </article>
-
-          <!-- We Are United -->
-          <article class="project project--link reveal" style="--i:1">
-            <div class="project-top">
-              <picture>
-                <source srcset="/assets/img/project-weareunited.avif?v=2" type="image/avif">
-                <img class="project-icon" src="/assets/img/project-weareunited.webp?v=2" width="48" height="48" alt="We Are United app icon" loading="lazy" decoding="async">
-              </picture>
-              <div class="project-links">
-                <a class="project-pwa" href="https://weareunited.app" target="_blank" rel="noopener">Visit ↗</a>
-                <a class="project-cover project-cover--badge" href="https://apps.apple.com/us/app/we-are-united/id6752208183" target="_blank" rel="noopener" aria-label="We Are United — Download on the App Store (new tab)">
-                  <img class="app-store-badge app-store-badge--dark" src="/assets/img/app-store-badge-en-white.svg" width="120" height="40" alt="" decoding="async">
-                  <img class="app-store-badge app-store-badge--light" src="/assets/img/app-store-badge-en-black.svg" width="120" height="40" alt="" decoding="async">
-                </a>
-              </div>
-            </div>
-            <p class="project-kicker">Community safety</p>
-            <h3 class="project-title">We Are United</h3>
-            <p class="project-desc">A privacy-first app for vulnerable communities — anonymous, verified local alerts with no identity exposure and hashed, fuzzed location.</p>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag tag--es">EN · ES (Somos Unidos)</span></div>
-            </div>
-          </article>
-
-          <!-- RetroStack -->
-          <article class="project project--link reveal" style="--i:2">
-            <div class="project-top">
-              <picture>
-                <source srcset="/assets/img/project-retrostack.avif" type="image/avif">
-                <img class="project-icon" src="/assets/img/project-retrostack.webp" width="48" height="48" alt="RetroStack logo" loading="lazy" decoding="async">
-              </picture>
-              <a class="project-cover" href="https://retrostack.app" target="_blank" rel="noopener" aria-label="RetroStack — visit retrostack.app (new tab)">Visit ↗</a>
-            </div>
-            <p class="project-kicker">Team collaboration</p>
-            <h3 class="project-title">RetroStack</h3>
-            <p class="project-desc">Real-time collaborative retro boards — sticky notes, sections, and voting that sync live across the room, with a clean Material 3 UI.</p>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Material 3</span></div>
-            </div>
-          </article>
-
-          <!-- Write an Obituary -->
-          <article class="project project--link reveal" style="--i:3">
-            <div class="project-top">
-              <picture>
-                <source srcset="/assets/img/project-obituary.avif" type="image/avif">
-                <img class="project-icon" src="/assets/img/project-obituary.webp" width="48" height="48" alt="Write an Obituary logo" loading="lazy" decoding="async">
-              </picture>
-              <a class="project-cover project-cover--badge" href="https://apps.apple.com/app/id6670371715" target="_blank" rel="noopener" aria-label="Write an Obituary — Download on the App Store (new tab)">
-                <img class="app-store-badge app-store-badge--dark" src="/assets/img/app-store-badge-en-white.svg" width="120" height="40" alt="" decoding="async">
-                <img class="app-store-badge app-store-badge--light" src="/assets/img/app-store-badge-en-black.svg" width="120" height="40" alt="" decoding="async">
-              </a>
-            </div>
-            <p class="project-kicker">AI · Memorial</p>
-            <h3 class="project-title">Write an Obituary</h3>
-            <p class="project-desc">A compassionate, AI-guided writer that helps people compose and share a meaningful obituary through gentle prompts, with PDF export.</p>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">AI</span></div>
-            </div>
-          </article>
-
-          <!-- Until Noon -->
-          <article class="project project--link reveal" style="--i:4">
-            <div class="project-top">
-              <picture>
-                <source srcset="/assets/img/project-untilnoon.avif" type="image/avif">
-                <img class="project-icon" src="/assets/img/project-untilnoon.webp" width="48" height="48" alt="Until Noon app icon" loading="lazy" decoding="async">
-              </picture>
-              <a class="project-cover project-cover--badge" href="https://apps.apple.com/app/id6791028213" target="_blank" rel="noopener" aria-label="Until Noon — Download on the App Store (new tab)">
-                <img class="app-store-badge app-store-badge--dark" src="/assets/img/app-store-badge-en-white.svg" width="120" height="40" alt="" decoding="async">
-                <img class="app-store-badge app-store-badge--light" src="/assets/img/app-store-badge-en-black.svg" width="120" height="40" alt="" decoding="async">
-              </a>
-            </div>
-            <p class="project-kicker">Civic · Reference</p>
-            <h3 class="project-title">Until Noon</h3>
-            <p class="project-desc">A calm, offline countdown to the next U.S. presidential term transition — every presidency from 1789 to today, with widgets and careful dates. Nothing partisan.</p>
-            <div class="project-foot">
-              <div class="project-tags"><span class="tag">SwiftUI</span><span class="tag">iOS</span><span class="tag">Widgets</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- ── FOOTER / CONTACT ───────────────────────────────────────────── -->
